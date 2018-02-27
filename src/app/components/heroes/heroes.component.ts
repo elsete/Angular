@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HeroesService } from '../../servicios/heroes.service';
+import { HeroesService, Heroe } from '../../servicios/heroes.service';
 
 
 @Component({
@@ -8,7 +8,7 @@ import { HeroesService } from '../../servicios/heroes.service';
 })
 export class HeroesComponent implements OnInit {
 
-  private _heroes:any[] = [];
+  public heroes:Heroe[] = [];
 
   constructor(private _heroesService:HeroesService) { 
         
@@ -16,7 +16,7 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit() {
 
-    this._heroes = this._heroesService.getHeroes();
+    this.heroes = this._heroesService.getHeroes();
 
   }
 
